@@ -1,12 +1,8 @@
 class Node
-  attr_accessor :data, :next_pointer
+  attr_accessor :val, :next
 
-  def initialize(init_data)
-    @data = init_data
-    @next_pointer = nil
-  end
-
-  def has_next?
-    !self.next_pointer.nil?
+  def initialize(val)
+    @val = val
+    @next = nil
   end
 end
