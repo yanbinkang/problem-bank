@@ -7,6 +7,13 @@ https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
 
 https://youtu.be/13m9ZCB8gjw
 
+Algorithm:
+1) Search for either of the two nodes whose lca we're looking for starting from the root
+
+2) Anytime any of the node is found we return that node to its parent
+
+3) Anytime any node gets a not null node from the left side and a not null node from the right side, it knows its the lca and returns its node value to its parent
+
 O(n)
 """
 
