@@ -1,7 +1,11 @@
 from binary_tree import *
 
 """
+Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
+
 https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+
+https://youtu.be/13m9ZCB8gjw
 
 O(n)
 """
