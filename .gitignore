@@ -4,3 +4,4 @@
 .Trashes
 .idea/
 *.pdf
+*.pyc
