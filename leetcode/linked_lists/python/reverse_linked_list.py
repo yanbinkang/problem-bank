@@ -1,5 +1,14 @@
 from linked_list import *
 
+"""
+https://leetcode.com/problems/reverse-linked-list/description/
+
+Reverse a singly linked list.
+
+Hint:
+A linked list can be reversed either iteratively or recursively. Could you implement both?
+"""
+
 def reverse_linked_list(head):
     current = head
     previous = None
