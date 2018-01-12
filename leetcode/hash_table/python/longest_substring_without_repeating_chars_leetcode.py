@@ -27,7 +27,7 @@ def length_of_longest_substring_3(s):
         dic[char] = dic.get(char, 0) + 1
 
         """
-        there is a repeated character. Think about it, it the value if char in the dictionary are all 1's, we're looking at unique characters. Hence when dic[char] > 1, that condition changes
+        there is a repeated character. Think about it, if the value of char in the dictionary are all 1's, we're looking at unique characters. Hence when dic[char] > 1, that condition changes
         """
         if dic[char] > 1:
             count += 1
