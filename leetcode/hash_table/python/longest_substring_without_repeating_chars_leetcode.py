@@ -36,6 +36,7 @@ def length_of_longest_substring_3(s):
 
         while count > 0:
             if s[left] in dic:
+
                 # if s[left] is a repeated character
                 if dic[s[left]] > 1:
                     count -= 1
@@ -85,16 +86,16 @@ def length_of_longest_substring(s):
     return s_max
 
 def length_of_longest_substring_2(s):
-    start = max_length = 0
+    left = max_length = 0
     used = {}
 
     for i, char in enumerate(s):
-        if char in used and start <= used[char]:
-            start = used[char] + 1
+        if char in used and left <= used[char]:
+            left = used[char] + 1
         else:
             # we're adding 1 to cater for zero based index when counting actualt length
-            # (i - start + 1) signifies end of substring minus start of substring plus 1
-            max_length = max(max_length, i - start + 1)
+            # (i - left + 1) signifies end of substring minus left of substring plus 1
+            max_length = max(max_length, i - left + 1)
 
         used[char] = i
 
