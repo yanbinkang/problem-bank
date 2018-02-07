@@ -9,7 +9,7 @@ Hint:
 A linked list can be reversed either iteratively or recursively. Could you implement both?
 """
 
-def reverse_linked_list(head):
+def reverse_list(head):
     current = head
     previous = None
 
@@ -49,7 +49,7 @@ if __name__ == '__main__':
     d.next = e
     e.next = f
 
-    res = reverse_linked_list(a)
+    res = reverse_list(a)
     res1 = reverse_list_rec(d)
 
     while res:
