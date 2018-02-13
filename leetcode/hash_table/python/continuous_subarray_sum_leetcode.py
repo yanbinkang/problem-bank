@@ -28,39 +28,9 @@ https://discuss.leetcode.com/topic/80793/java-o-n-time-o-k-space
 We iterate through the input array exactly once, keeping track of the running sum mod k of the elements in the process. If we find that a running sum value at index j has been previously seen before in some earlier index i in the array, then we know that the sub-array (i,j] contains a desired sum.
 
 Note to self: NEED TO UNDERSTAND THIS SHIT!
+Question to self: DO YOU STILL UNDERSTAND WHY WE'RE SETTING hash_map[0] = -1?
 """
-# def check_subarray_sum(nums, k):
-#     # accumulated the nums
-#     n = len(nums)
-
-#     for i in range(1, n):
-#         nums[i] += nums[i - 1]
-
-#     d = {}
-
-#     # print nums
-
-#     for i in range(len(nums)):
-#         num = nums[i]
-
-#         if num == 0 or i > 0:
-#             return True
-
-#         if k != 0:
-#             # if num % k == 0:
-#             #     return True
-
-#             if (num - k) % k == 0:
-#                 if i - d[num - k] > 1:
-#                     return True
-
-#         if num not in d:
-#             d[num] = i
-
-#     return False
-
-
-def check_subarray_sum_1(nums, k):
+def check_subarray_sum(nums, k):
     hash_map = {}
     hash_map[0] = -1
 
@@ -83,9 +53,9 @@ def check_subarray_sum_1(nums, k):
 
 
 if __name__ == '__main__':
-    print check_subarray_sum_1([23, 2, 4, 6, 7], 6)
-    print check_subarray_sum_1([23, 2, 6, 4, 7], 6)
-    print check_subarray_sum_1([7, 6, 6], 6)
-    print check_subarray_sum_1([0, 0], 0)
-    print check_subarray_sum_1([0], -1)
+    print check_subarray_sum([23, 2, 4, 6, 7], 6)
+    print check_subarray_sum([23, 2, 6, 4, 7], 6)
+    print check_subarray_sum([7, 6, 6], 6)
+    print check_subarray_sum([0, 0], 0)
+    print check_subarray_sum([0], -1)
 
