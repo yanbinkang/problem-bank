@@ -1,4 +1,4 @@
-def quic_sort(a_list):
+def quick_sort(a_list):
     quick_sort_helper(a_list, 0, len(a_list)-1)
 
 def quick_sort_helper(a_list, first, last):
@@ -35,5 +35,5 @@ def partition(a_list, first, last):
     return right_mark
 
 my_list = [55, 23, 26, 2, 25]
-quic_sort(my_list)
+quick_sort(my_list)
 print my_list
