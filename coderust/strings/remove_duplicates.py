@@ -1,4 +1,7 @@
 def remove_duplicates(a_string):
+    """
+    O(n) time O(n) space
+    """
     result = ''
     count_dict = {}
 
