@@ -19,6 +19,9 @@ Note:
 * The characters in J are distinct.
 """
 class Solution(object):
+    """
+    O(m + n) time O(m) space
+    """
     def numJewelsInStones(self, J, S):
         """
         :type J: str
@@ -38,6 +41,9 @@ class Solution(object):
 
 
 class Solution1(object):
+    """
+    O(m * n) time O(1) space
+    """
     def numJewelsInStones1(self, J, S):
         """
         :type J: str
