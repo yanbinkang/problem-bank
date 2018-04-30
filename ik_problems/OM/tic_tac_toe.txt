@@ -1,0 +1,21 @@
+board
+  - squares
+  - all_squares_marked?
+  - empty_squares
+  - empty_positions
+  - mark_square
+  - Square class interracts with board class.
+
+player
+  - name
+  - marker
+
+square
+ - is_occupied?
+ - mark(marker)
+
+game
+  - current_player_marks_square
+  - alternate player
+  - current_player_win
+  - play
