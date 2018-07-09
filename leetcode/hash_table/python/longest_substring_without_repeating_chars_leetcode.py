@@ -62,7 +62,7 @@ Back to our problem. We use HashSet to store the characters in current window [i
 
 Then we slide the index j to the right. If it is not in the HashSet, we slide j further. Doing so until s[j] is already in the HashSet.
 
-At this point, we found the maximum size of substrings without duplicate characters start with index i. If we do this for all i, we get our answer.
+At this point, we found the maximum size of substrings without duplicate characters start with index i. We remove string indexed at i from set and now close the window by increasing i (the else part of the code). If we do this for all i, we get our answer.
 
 
 Time complexity : O(2n) = O(n). In the worst case each character will be visited twice by i and j

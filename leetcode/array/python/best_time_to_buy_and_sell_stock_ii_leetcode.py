@@ -30,7 +30,7 @@ def max_profit_1(price):
 
     for i in range(1, len(prices)):
         total = total + max(prices[i] - price[i - 1], 0)
-        # max(prices[i] - price[i - 1], 0) if the price differnece does't make us a profit, do nothing. i.e add zero
+        # max(prices[i] - price[i - 1], 0) if the price differnece doesn't make us a profit, do nothing. i.e add zero
 
     return total
 

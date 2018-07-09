@@ -20,7 +20,7 @@ Explanation: "the", "is", "sunny" and "day" are the four most frequent words,
     with the number of occurrence being 4, 3, 2 and 1 respectively.
 
 Note:
-    1. You may assume k is always valid, 1 ≤ k ≤ number of unique elements.
+    1. You may assume k is always valid, 1 <= k <= number of unique elements.
     2. Input words contain only lowercase letters.
 
 Follow up:
@@ -52,7 +52,10 @@ def topKFrequent(words, k):
 
     for i in reversed(range(len(bucket))):
         if bucket[i] and len(result) < k:
-                temp = sorted(bucket[i])
-                result.extend( temp )
+            temp = sorted(bucket[i])
+            result.extend( temp )
 
     return result[:k]
+
+if __name__ == '__main__':
+    print topKFrequent(["the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"], 4)

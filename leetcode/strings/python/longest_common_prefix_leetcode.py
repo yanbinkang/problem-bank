@@ -3,6 +3,21 @@ https://leetcode.com/problems/longest-common-prefix/description/
 
 Write a function to find the longest common prefix string amongst an array of strings.
 
+If there is no common prefix, return an empty string "".
+
+Example 1:
+
+Input: ["flower","flow","flight"]
+Output: "fl"
+Example 2:
+
+Input: ["dog","racecar","car"]
+Output: ""
+Explanation: There is no common prefix among the input strings.
+Note:
+
+All given inputs are in lowercase letters a-z.
+
 algo: first sort the array and then simply compare the first and last elements in the sorted array. After the array is sorted, if there is a common prefix the first and last array will have it. i.e after sorting the first string and last string have the shortest common prefix, if there is one!
 
 Time complexity: Comparison between two strings is O(k) where k is the average length of the two strings.

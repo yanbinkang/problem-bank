@@ -4,6 +4,22 @@ from binary_tree import *
 https://leetcode.com/problems/count-univalue-subtrees/
 
 http://www.geeksforgeeks.org/find-count-of-singly-subtrees/
+
+Given a binary tree, count the number of uni-value subtrees.
+
+A Uni-value subtree means all nodes of the subtree have the same value.
+
+Example :
+
+Input:  root = [5,1,5,5,5,null,5]
+
+              5
+             / \
+            1   5
+           / \   \
+          5   5   5
+
+Output: 4
 """
 def count_unival_subtrees(root):
     count = [0]
