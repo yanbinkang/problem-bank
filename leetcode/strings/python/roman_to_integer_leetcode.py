@@ -7,7 +7,7 @@ Input is guaranteed to be within the range from 1 to 3999.
 
 https://discuss.leetcode.com/topic/17110/my-straightforward-python-solution
 
-Note: The trick is that the last letter is always added. Except the last one, if one letter is less than its latter one, this letter is subtracted.
+Note: The trick is that the last letter's value is always added. Except the last one, if a letter is less than the one after it, it's value is subtracted.
 
 O(n) time and O(k) space to store roman_map
 """
