@@ -30,7 +30,7 @@ def group_strings(strings):
     for s in strings:
         temp = ''
         for i in range(1, len(s)):
-            temp += ( str( (ord(s[i]) - (ord(s[i - 1])) ) % 26 ) )
+            temp += ( str( (ord(s[i]) - ord(s[i - 1]) ) % 26 ) )
 
         d[temp].append(s)
 

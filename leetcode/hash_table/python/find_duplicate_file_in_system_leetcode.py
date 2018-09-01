@@ -62,6 +62,7 @@ def find_duplicate(paths):
     return [v for v in dic.values() if len(v) > 1]
 
 # https://discuss.leetcode.com/topic/91325/python-straightforward-with-explanation
+import collections
 def findDuplicate(self, paths):
     M = collections.defaultdict(list)
     for line in paths:

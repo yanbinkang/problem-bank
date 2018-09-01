@@ -73,3 +73,4 @@ if __name__ == '__main__':
     print find_anagrams('cbaebabacd', 'abc')
     print find_anagrams('abab', 'ab')
     print find_anagrams('aa', 'bb')
+    print find_anagrams('baa', 'aa')
