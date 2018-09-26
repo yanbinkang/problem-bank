@@ -46,7 +46,7 @@ def lowest_common_ancestor(root, p, q):
 
     if left is not None and right is not None: return root # p and q can be found on root's left or right subtree. meaning root is LCA
 
-    if left == None and right == None: return None # neither p or q cannot be found. return None
+    if left == None and right == None: return None # neither p or q can be found. return None
 
     return left if left else right # return non null node
 

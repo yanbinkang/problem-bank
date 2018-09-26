@@ -1,4 +1,4 @@
-"""
+=begin
 https://leetcode.com/problems/happy-number/
 
 Write an algorithm to determine if a number is "happy".
@@ -15,43 +15,22 @@ Example: 19 is a happy number
 https://discuss.leetcode.com/topic/19520/my-python-solution
 
 Note: we're using a set because we don't want to compute two numbers twice. Eg. 82 and 28.
-"""
-def is_happy(n):
-    n_set = set()
+=end
+require 'set'
+def is_happy(n)
+  seen = Set.new
 
-    while n != 1:
-        n = sum([int(i) ** 2 for i in str(n)])
+  while !seen.include?(n)
+    seen.add(n)
 
-        if n in n_set:
-            return False
-        else:
-            n_set.add(n)
-    else:
-        return True
+    n = n.to_s.split('').map { |num| num.to_i ** 2 }.inject(&:+)
+  end
 
-def is_happy_2(n):
-    n_set = set()
+  n == 1
+end
 
-    while n >= 1:
-        result = 0
-
-        n_str = str(n)
-
-        for char in n_str:
-            result += pow(int(char), 2)
-
-        if result in n_set:
-            return False
-        else:
-            n_set.add(result)
-
-        if result == 1:
-            return True
-
-        n = result
-
-
-if __name__ == '__main__':
-    print is_happy(3)
-    print('\n')
-    print is_happy_2(19)
+if __FILE__ == $0
+  puts is_happy(19)
+  puts is_happy(3)
+  puts RUBY_ENGINE_VERSION
+end

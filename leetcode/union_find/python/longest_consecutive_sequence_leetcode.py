@@ -8,9 +8,7 @@ Given [100, 4, 200, 1, 3, 2],
 The longest consecutive elements sequence is [1, 2, 3, 4]. Return its length: 4.
 
 Your algorithm should run in O(n) complexity.
-"""
 
-"""
 https://discuss.leetcode.com/topic/15383/simple-o-n-with-explanation-just-walk-each-streak
 
 First turn the input into a set of numbers. That takes O(n) and then we can ask in O(1) whether we have a certain number.

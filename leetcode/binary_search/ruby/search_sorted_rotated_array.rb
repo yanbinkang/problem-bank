@@ -1,4 +1,4 @@
-"""
+=begin
 https://leetcode.com/problems/search-in-rotated-sorted-array/#/description
 
 Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
@@ -24,32 +24,38 @@ Algo: Use Binary Search.
     a. Check if target is in this range. if so make low = mid + 1. else make high = mid - 1, meaning we need to look at lower half of array
 
 3. If no result is found return -1
-"""
-def search(nums, target):
-    if not nums: return -1
+=end
+def search(nums, target)
+  return -1 if nums.empty?
 
-    low, high = 0, len(nums) - 1
+  low, high = 0, nums.length - 1
 
-    while low <= high:
-        mid = (low + high) // 2
+  while low <= high
+    mid = (low + high) / 2
 
-        if target == nums[mid]:
-            return mid
+    return mid if target == nums[mid]
 
-        if nums[low] <= nums[mid]:
-            if nums[low] <= target <= nums[mid]:
-                high = mid - 1
-            else:
-                low = mid + 1
-        else:
-            if nums[mid] <= target <= nums[high]:
-                low = mid + 1
-            else:
-                high = mid - 1
-    return -1
+    if nums[low] <= nums[mid]
+      if nums[low] <= target && target <= nums[mid]
+        high = mid - 1
+      else
+        low = mid + 1
+      end
+    else
+      if nums[mid] <= target && target <= nums[high]
+        low = mid + 1
+      else
+        high = mid - 1
+      end
+    end
+  end
 
-if __name__ == '__main__':
-    nums = [12, 13, 14, 15, 16, 17, 18, 19, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-    print(search([1], 1))
-    print(search(nums, 14))
-    print(search([1], 0))
+  return -1
+end
+
+if __FILE__ == $0
+  nums = [12, 13, 14, 15, 16, 17, 18, 19, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  puts search(nums, 14)
+  puts (search([1], 1))
+  puts (search([1], 0))
+end

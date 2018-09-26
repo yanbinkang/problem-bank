@@ -1,4 +1,4 @@
-"""
+=begin
 https://leetcode.com/problems/word-break/
 
 Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, determine if s can be segmented into a space-separated sequence of one or more dictionary words. You may assume the dictionary does not contain duplicate words.
@@ -8,9 +8,7 @@ s = "leetcode",
 dict = ["leet", "code"].
 
 Return true because "leetcode" can be segmented as "leet code".
-"""
 
-"""
 ref: https://leetcode.com/problems/word-break/#/solution
 
 Time complexity : O(n^2). For every starting index, the search can continue till the end of the given string.
@@ -51,66 +49,32 @@ Then we do:
 
 in the for loop.
 
-Note we add 1 to the loop termination condition because we're dealing with substrings. Example, even though 'leetcode' has length of 8, we have to do 'leetcode'[0:9] if we want to get a substring of the whole string in the inner if condition.
-"""
-def word_break_bfs(string, word_dict):
-    queue = []
-    visited = [0] * len(string)
-    queue.append(0)
+Note we add 1 to the loop termination condition because we're dealing with substrings. Example, even though 'leetcode' has length of 8, we have to do 'leetcode'[0...9] if we want to get a substring of the whole string in the inner if condition. Where the 9th index is non-inclusive.
+=end
 
-    while queue:
-        start = queue.pop()
+def word_break(s, word_dict)
+  queue, visited = [], [0] * s.length
+  queue << 0
 
-        if visited[start] == 0:
-            for i in range(start + 1, len(string) + 1):
-                if string[start:i] in word_dict:
-                    queue.insert(0, i)
-                    if i == len(string):
-                        return True
-            visited[start] = 1
-    return False
+  until queue.empty?
+    start = queue.pop
 
-def word_break(string, word_dict):
-    if not string or not word_dict:
-        return False
+    if visited[start].zero?
+      (start + 1 ... s.length + 1).each do |i|
+        if word_dict.include?(s[start...i])
+          queue.unshift(i)
 
-    max_length = len(max(word_dict, key=len))
-    hash_map = {}
+          return true if i == s.length
+        end
+      end
 
-    return word_break_helper(string, word_dict, 0, max_length, hash_map)
+      visited[start] = 1
+    end
+  end
 
-def word_break_helper(string, dictionary, start, max_length, hash_map):
-    # we've reached the end of the string
-    if start == len(string):
-        return True
+  false
+end
 
-    if start in hash_map:
-        return hash_map[start]
-
-    # check for words upto the length of the longest word in the dictionary at a time
-    for i in range(start, start + max_length):
-        if i < len(string):
-            new_word = string[start:i + 1]
-
-            # if new word is not given dictionary continue building new_word
-            if new_word not in dictionary:
-                continue
-
-            # we've check the first group of words, check the next group
-            if word_break_helper(string, dictionary, i + 1, max_length, hash_map):
-                        hash_map[start] = True
-                        return True
-
-    hash_map[start] = False
-    return False
-
-
-if __name__ == '__main__':
-    print word_break_bfs('leetcode', ['leet', 'code'])
-    print word_break_bfs('leetcode', ['leet', 'cod'])
-    print word_break_bfs('a', [])
-    print word_break_bfs('applepie', ['apple', 'pear', 'pier', 'pie'])
-    print('\n')
-    print word_break('leetcode', ['leet', 'code'])
-    print word_break('leetcode', ['leet', 'cod'])
-    print word_break('a', [])
+if __FILE__ == $0
+  puts word_break('leetcode', ['leet', 'code'])
+end

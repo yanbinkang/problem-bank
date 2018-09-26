@@ -129,8 +129,8 @@ def remove(s, result, last_i, last_j, par):
 
 
 if __name__ == '__main__':
-    print remove_invalid_parenthesis('()())()')
+    print(remove_invalid_parenthesis('()())()'))
     print('\n')
-    print remove_invalid_parenthesis_1('()())()')
-    print remove_invalid_parenthesis_1(')d))')
+    print(remove_invalid_parenthesis_1('()())()'))
+    print(remove_invalid_parenthesis_1(')d))'))
 

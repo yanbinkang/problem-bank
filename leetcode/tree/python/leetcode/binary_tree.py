@@ -17,5 +17,5 @@ class BinaryTree:
             self.right = BinaryTree(new_node)
         else:
             t = BinaryTree(new_node)
-            t.right = self.left
-            self.left = t
+            t.right = self.right
+            self.right = t

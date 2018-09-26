@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/repeated-dna-sequences/
+
 require 'set'
 def find_repeated_dna_sequences(s)
   repeat, seen = Set.new, Set.new
@@ -17,6 +19,10 @@ def find_repeated_dna_sequences(s)
   end
 
   repeat.to_a
+end
+
+def find_repeated_dna_sequences_1(s)
+  s.chars.each_cons(10).group_by(&:join).select { |_, group| group.size > 1 }.keys
 end
 
 if __FILE__ == $0
