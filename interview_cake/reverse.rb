@@ -11,5 +11,5 @@ def reverse(a_string)
     right_pointer -= 1
   end
 
-  return a_string
+  a_string
 end

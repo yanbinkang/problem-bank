@@ -28,7 +28,7 @@ def group_anagrams(strs)
   strs_hash.values
 end
 
-if __FILE__ == $0
-  strs = ['eat', 'tea', 'tan', 'ate', 'nat', 'bat']
+if $PROGRAM_NAME == __FILE__
+  strs = %w[eat tea tan ate nat bat]
   puts group_anagrams(strs).inspect
 end

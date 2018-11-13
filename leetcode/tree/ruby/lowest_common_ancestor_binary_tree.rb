@@ -29,7 +29,6 @@ Algorithm:
 
 O(n)
 =end
-require_relative 'binary_tree'
 def lowest_common_ancestor(root, p, q)
   return if root.nil?
 

@@ -21,7 +21,8 @@ def reverse_characters(message, front_index, back_index)
     front_index += 1
     back_index -= 1
   end
-  return message
+
+  message
 end
 
 # puts reverse_words('the eagle has landed')

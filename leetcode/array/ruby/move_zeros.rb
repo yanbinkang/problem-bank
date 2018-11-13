@@ -15,7 +15,7 @@ def move_zeros(nums)
   insert_pos = 0
 
   nums.each do |num|
-    if !num.zero?
+    unless num.zero?
       nums[insert_pos] = num
       insert_pos += 1
     end
@@ -27,7 +27,7 @@ def move_zeros(nums)
   end
 end
 
-if __FILE__ == $0
+if $PROGRAM_NAME == __FILE__
   nums = [0, 1, 0, 3, 12]
   move_zeros(nums) # [1, 3, 12, 0, 0]
   puts nums

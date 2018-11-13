@@ -1,11 +1,28 @@
-require_relative 'linked_list'
+=begin
+https://leetcode.com/problems/merge-two-sorted-lists/
+
+Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
+
+Example:
+
+Input: 1->2->4, 1->3->4
+Output: 1->1->2->3->4->4
+=end
+
+# Definition for singly-linked list.
+class ListNode
+  attr_accessor :val, :next
+
+  def initialize(val)
+    @val = val
+    @next = nil
+  end
+end
 
 def sorted_merge(a, b)
-  if a.nil?
-    return b
-  elsif b.nil?
-    return a
-  end
+  # base cases
+  return b if a.nil?
+  return a if b.nil?
 
   if a.val <= b.val
     result =  a
@@ -15,17 +32,16 @@ def sorted_merge(a, b)
     result.next = sorted_merge(a, b.next)
   end
 
-  return result
+  result
 end
 
+a = ListNode.new(1)
+b = ListNode.new(2)
+c = ListNode.new(3)
 
-a = Node.new(1)
-b = Node.new(2)
-c = Node.new(3)
-
-e = Node.new(4)
-f = Node.new(5)
-g = Node.new(6)
+e = ListNode.new(4)
+f = ListNode.new(5)
+g = ListNode.new(6)
 
 a.next = b
 b.next = c
@@ -35,7 +51,7 @@ f.next = g
 
 res = sorted_merge(a, e)
 
-while !res.nil?
+until res.nil?
   puts res.val
   puts
   res = res.next

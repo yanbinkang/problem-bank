@@ -26,7 +26,7 @@ DO YOU UNDERSTAND WHY WE HAVE TO DO:
     for i in range(len(s) + 1):
         pass
 
-Because we have to reverse the last word in the sentence, we need to go to the actual length of the sentence se we can reverse by using:
+Because we have to reverse the last word in the sentence, we need to go to the actual length of the sentence so we can reverse by using:
     reverse_char(s, index, i - 1) where i is the length of the input
 """
 def reverse_words(s):

@@ -44,9 +44,9 @@ def reverse_words_2(s):
 
 
 if __name__ == '__main__':
-    print reverse_words("Let's take LeetCode contest")
+    print(reverse_words("Let's take LeetCode contest"))
     print('\n')
-    print reverse_words_1("Let's take LeetCode contest")
+    print(reverse_words_1("Let's take LeetCode contest"))
     print('\n')
-    print reverse_words_2("Let's take LeetCode contest")
+    print(reverse_words_2("Let's take LeetCode contest"))
 

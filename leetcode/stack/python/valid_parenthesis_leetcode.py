@@ -24,7 +24,7 @@ def is_valid(s):
         else: # char not in the characters we want
             return False
 
-    # if stack if empty at this point, return True else False
+    # if stack is empty at this point, return True else False
     return stack == []
 
 # my solution
@@ -47,35 +47,40 @@ def is_valid_1(s):
 
     return stack == []
 
-def is_valid_2(s):
-    stack = []
+# FIX ME
+# def is_valid_2(s):
+#     stack = []
 
-    for char in s:
-        if char in '([{':
-            stack.append(char)
-        else:
-            if stack:
-                top = stack.pop()
-                if not matches(top, char):
-                    return False
+#     for char in s:
+#         if char in '([{':
+#             stack.append(char)
+#         else:
+#             if stack:
+#                 top = stack.pop()
+#                 if not matches(top, char):
+#                     return False
 
-    return stack == []
+#     return stack == []
 
 
-def matches(open, close):
-    opens = '([{'
-    closers = ')]}'
-    return opens.index(open) == closers.index(close)
+# def matches(open, close):
+#     opens = '([{'
+#     closers = ')]}'
+#     return opens.index(open) == closers.index(close)
 
 if __name__ == '__main__':
-    print is_valid('()[]{}')
+    print(is_valid('()'))
     print('\n')
-    print is_valid('([)]')
+    print(is_valid('()[]{}'))
     print('\n')
-    print is_valid('{{([][])}()}')
+    print(is_valid('([)]'))
     print('\n')
-    print is_valid_2('{{([][])}()}')
+    print(is_valid('{{([][])}()}'))
     print('\n')
-    print is_valid_1('()[]{}')
+    print(is_valid_2('{{([][])}()}'))
     print('\n')
-    print is_valid_1('{{([][])}()}')
+    print(is_valid_1('()[]{}'))
+    print('\n')
+    print(is_valid_1('{{([][])}()}'))
+    print('\n')
+    print(is_valid_2(']'))

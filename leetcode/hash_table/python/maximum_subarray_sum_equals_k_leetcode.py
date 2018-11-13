@@ -20,7 +20,7 @@ algo:
 1. Calculate accumulated sum for nums array.
 
 2. Go through the accumulated sum:
-    a) If the sum == k, update max_length
+    a) If the sum == k, update max_length. This happens when there are negative numbers in the array. SO when the accumulated sum is equal to k, we have might have a max_length and we need to update it. eg. max_subarray_len([1, -1, 5, -2, 3], 3)
 
     b) if sum - k is in the hash table, update max_length. Example, given k = 6 and nums as [23, 2, 4, 6, 7], we have an accumulated sum:
                   [23, 25, 29, 35, 42].
@@ -124,7 +124,7 @@ if __name__ == '__main__':
     print max_subarray_len([1, -1, 5, -2, 3], 3)
     print('\n')
     print max_subarray_length_0([1, -1, 5, -2, 3], 3)
-    print max_subarray_length_0([1,-1,5,-2,3], 3) # tests why we need hash_map[0] = -1
+    print max_subarray_length_0([1, -1, 5, -2, 3], 3) # tests why we need hash_map[0] = -1
 
     print('\n')
     print max_subarray_length_1([1, -1, 5, -2, 3], 3)
