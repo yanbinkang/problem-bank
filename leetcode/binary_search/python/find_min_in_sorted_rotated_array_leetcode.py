@@ -21,8 +21,10 @@ If value of the element in the middle is larger than the first element, we know 
 
 https://discuss.leetcode.com/topic/4100/compact-and-clean-c-solution
 """
+
+
 def find_min(nums):
-    lo, hi = 0, len(nums) - 1 # uses index
+    lo, hi = 0, len(nums) - 1  # uses index
 
     while lo < hi:
         if nums[lo] < nums[hi]:
@@ -32,13 +34,15 @@ def find_min(nums):
         mid = (lo + hi) // 2
 
         if nums[mid] >= nums[lo]:
-            lo = mid + 1 # rotation is in second half
+            lo = mid + 1  # rotation is in second half
         else:
-            hi = mid # rotation is in first half
+            hi = mid  # rotation is in first half
 
     return nums[lo]
 
+
 if __name__ == '__main__':
-    print find_min([12, 13, 14, 15, 16, 17, 18, 19, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
+    print find_min(
+        [12, 13, 14, 15, 16, 17, 18, 19, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
     print find_min([4, 5, 6, 7, 0, 1, 2])
     print find_min([1])

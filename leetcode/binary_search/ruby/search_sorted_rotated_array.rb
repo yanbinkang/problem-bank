@@ -50,12 +50,12 @@ def search(nums, target)
     end
   end
 
-  return -1
+  -1
 end
 
 if __FILE__ == $0
   nums = [12, 13, 14, 15, 16, 17, 18, 19, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
   puts search(nums, 14)
-  puts (search([1], 1))
-  puts (search([1], 0))
+  puts search([1], 1)
+  puts search([1], 0)
 end
