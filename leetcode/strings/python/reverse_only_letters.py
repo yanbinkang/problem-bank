@@ -41,7 +41,7 @@ class Solution(object):
                 left += 1
             elif not S[right].isalpha():
                 right -= 1
-            elif S[left].isalpha() and S[right].isalpha():
+            else:
                 S[left], S[right] = S[right], S[left]
                 left += 1
                 right -= 1
