@@ -16,6 +16,7 @@ The array may contain duplicates.
 ref: https://discuss.leetcode.com/topic/28388/only-two-more-lines-code-on-top-of-the-solution-for-part-i
 """
 
+
 def findMin(nums):
     """
     :type nums: List[int]
