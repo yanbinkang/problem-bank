@@ -15,6 +15,8 @@ O(n * m) time where n is the integer given and m is the size of string at step n
 
 O(m) space where m is the size of the string at step n
 """
+
+
 def count_and_say(n):
     seq = '1'
 
@@ -29,7 +31,6 @@ def count_and_say(n):
             else:
                 string += str(count) + seq[j - 1]
                 count = 1
-
         """
         seq = '1' i.e we're starting or we've reached the last index for seq.
 
@@ -41,6 +42,7 @@ def count_and_say(n):
 
     return seq
 
+
 def count_and_say_1(n):
     s = '1'
 
@@ -51,10 +53,9 @@ def count_and_say_1(n):
         for j in range(1, len(s) + 1):
             # end of the string or char and previous char are not the same
             if j == len(s) or s[j - 1] != s[j]:
-                string += str(count)
-                string += s[j - 1]
+                string += str(count) + s[j - 1]
                 count = 1
-            else: # char and previous char are the same
+            else:  # char and previous char are the same
                 count += 1
 
         s = string
@@ -64,4 +65,3 @@ def count_and_say_1(n):
 if __name__ == '__main__':
     print count_and_say(5)
     print count_and_say_1(5)
-
