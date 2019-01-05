@@ -14,6 +14,8 @@ For the purpose of this problem, we define empty string as valid palindrome.
 """
 # O(n) time and space
 import string
+
+
 def is_palindrome(s):
     deque = []
 
@@ -37,20 +39,23 @@ def is_palindrome(s):
 
     return True
 
+
 """
 str.isalnum()
 
 Return true if all characters in the string are alphanumeric and there is at least one character, false otherwise.
 """
+
+
 # O(n * 2k) ==> O(n) time O(1) space
 def is_palindrome_1(s):
     l, r = 0, len(s) - 1
 
-    while l < r: # O(n)
-        while l < r and not s[l].isalnum(): # O(k) k is number of non alnum
+    while l < r:  # O(n)
+        while l < r and not s[l].isalnum():  # O(k) k is number of non alnum
             l += 1
 
-        while l < r and not s[r].isalnum(): # O(k) k is number of non alnum
+        while l < r and not s[r].isalnum():  # O(k) k is number of non alnum
             r -= 1
 
         if s[l].lower() != s[r].lower():
@@ -60,6 +65,7 @@ def is_palindrome_1(s):
         r -= 1
 
     return True
+
 
 # O(n) time O(1) space
 def is_palindrome_2(s):
@@ -88,3 +94,4 @@ if __name__ == '__main__':
     print('\n')
     print is_palindrome_2("A man, a plan, a canal: Panama")
     print is_palindrome_2("race a car")
+    print is_palindrome_2("yo, banana boy!")
