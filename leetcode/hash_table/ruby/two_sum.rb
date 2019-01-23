@@ -21,8 +21,19 @@ def two_sum(nums, target)
   end
 end
 
+def two_sum_brute_force(nums, target)
+  (0..nums.size - 1).each do |i|
+    (i + 1..nums.size - 1).each do |j|
+      return [i, j] if nums[j] == target - nums[i]
+    end
+  end
+end
+
 if $PROGRAM_NAME == __FILE__
   p two_sum([2, 7, 11, 15], 9)
   p two_sum([0, 4, 3, 0], 0)
   p two_sum([-1, -2, -3, -4, -5], -8)
+  puts
+  p two_sum_brute_force([2, 7, 11, 15], 9)
+  p two_sum_brute_force([-1, -2, -3, -4, -5], -8)
 end
