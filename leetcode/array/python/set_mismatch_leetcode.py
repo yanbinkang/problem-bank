@@ -22,15 +22,15 @@ def findErrorNums(nums):
     O(n) time and space
     """
     S = set((range(1, len(nums) + 1)))
-    table, result = set(), []
+    seen, result = set(), []
 
     missing = S - set(nums)
 
     for num in nums:
-        if num in table:
+        if num in seen:
             result.append(num)
         else:
-            table.add(num)
+            seen.add(num)
 
     return result + list(missing)
 
