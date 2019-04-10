@@ -16,6 +16,8 @@ Output: 1
 Explanation: The longest continuous increasing subsequence is [2], its length is 1.
 Note: Length of the array will not exceed 10,000.
 """
+
+
 def findLengthOfLCIS(nums):
     """
     :type nums: List[int]
@@ -34,13 +36,13 @@ def findLengthOfLCIS(nums):
         else:
             left = right = i
 
-
     return max_length
+
 
 def findLengthOfLCIS_DP(nums):
     if not nums: return 0
 
-    dp =  [0] * len(nums)
+    dp = [0] * len(nums)
     max_length = 1
     dp[0] = 1
 
@@ -54,7 +56,8 @@ def findLengthOfLCIS_DP(nums):
 
     return max_length
 
+
 if __name__ == '__main__':
-    print findLengthOfLCIS([1,3,5,4,7])
+    print findLengthOfLCIS([1, 3, 5, 4, 7])
     print('\n')
-    print findLengthOfLCIS_DP([1,3,5,4,7])
+    print findLengthOfLCIS_DP([1, 3, 5, 4, 7])

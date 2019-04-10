@@ -15,41 +15,58 @@ https://discuss.leetcode.com/topic/3396/my-iterative-sollution-very-simple-under
 
 Time complexity: Assuming the average number of letters on every number is m and the length of digits string is n, then the time complexity is O(m^n) [exponential]
 """
+
+
 def letter_combinations(digits):
-    result = []
+    results = []
 
     if not digits:
-        return result
+        return results
 
-    result.append('')
+    results.append('')
 
-    char_map = ['0', '1', 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz']
+    char_map = [
+        '0', '1', 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz'
+    ]
 
     for digit in digits:
         letters = char_map[int(digit)]
         temp = []
 
-        for _str in result:
-            for char in letters:
-                temp.append(_str + char)
-        result = temp
+        for result in results:
+            for letter in letters:
+                temp.append(result + letter)
+        results = temp
 
-    return result
+    return results
+
 
 """
 https://discuss.leetcode.com/topic/19124/python-easy-to-understand-backtracking-solution
 """
+
+
 def letter_combinations_1(digits):
     result = []
 
     if len(digits) == 0:
         return result
 
-    dic = {'2':'abc', '3':'def', '4':'ghi', '5':'jkl', '6':'mno', '7':'pqrs', '8':'tuv', '9':'wxyz'}
+    dic = {
+        '2': 'abc',
+        '3': 'def',
+        '4': 'ghi',
+        '5': 'jkl',
+        '6': 'mno',
+        '7': 'pqrs',
+        '8': 'tuv',
+        '9': 'wxyz'
+    }
 
     helper(digits, dic, 0, '', result)
 
     return result
+
 
 def helper(digits, dic, start, temp_char, result):
     if len(temp_char) == len(digits):
@@ -62,10 +79,11 @@ def helper(digits, dic, start, temp_char, result):
 
 
 if __name__ == '__main__':
-    print letter_combinations('23') # ['ad', 'bd', 'cd', 'ae', 'be', 'ce', 'af', 'bf', 'cf']
+    print letter_combinations(
+        '23')  # ['ad', 'bd', 'cd', 'ae', 'be', 'ce', 'af', 'bf', 'cf']
     print letter_combinations('')
 
     print('\n')
-    print letter_combinations_1('23') # ['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']
+    print letter_combinations_1(
+        '23')  # ['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']
     print letter_combinations_1('')
-

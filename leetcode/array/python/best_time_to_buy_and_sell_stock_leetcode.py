@@ -21,6 +21,8 @@ https://discuss.leetcode.com/topic/5863/sharing-my-simple-and-clear-c-solution
 
 hint: at the ith element, ask yourself, which price is the min_so_far (from 0th - ith index). When you subtract the current price (ith element) from the min_so_far, we'll get a profit. Return the max profit at the end of the iteration!
 """
+
+
 def max_profit(prices):
     max_pro = 0
     min_price_so_far = float('inf')
@@ -30,6 +32,7 @@ def max_profit(prices):
         max_pro = max(max_pro, price - min_price_so_far)
 
     return max_pro
+
 
 # https://discuss.leetcode.com/topic/19853/kadane-s-algorithm-since-no-one-has-mentioned-about-this-so-far-in-case-if-interviewer-twists-the-input
 def max_profit_1(prices):
@@ -41,6 +44,7 @@ def max_profit_1(prices):
         max_so_far = max(max_cur, max_so_far)
 
     return max_so_far
+
 
 if __name__ == '__main__':
     print max_profit([7, 1, 5, 3, 6, 4])

@@ -29,6 +29,8 @@ Assume left = 0 and mid = 3, and the target we want to search for is 5. Therefor
 
 As we cannot determine which of the above is true, the best we can do is to move left one step to the right and repeat the process again. Therefore, we are able to construct a worst case input which runs in O(n), for example: the input 11111111...115.
 """
+
+
 def search(nums, target):
     l, r = 0, len(nums) - 1
 
@@ -37,7 +39,6 @@ def search(nums, target):
 
         if nums[mid] == target:
             return True
-
         """
         at this point nums[mid] is not what we're searching for, so if there is a duplicate number thats the same as mid we want to exclude it from our search in the next iteration
         """
@@ -64,6 +65,6 @@ def search(nums, target):
 
 
 if __name__ == '__main__':
-    print search([1, 3, 1, 1, 1], 3)
-    print search([1, 1, 5, 1, 1, 1, 1], 5)
-    print search([1, 1, 1, 1, 1, 1, 5], 5) # worst case
+    print search(([1, 3, 1, 1, 1], 3))
+    print search(([1, 1, 5, 1, 1, 1, 1], 5))
+    print search(([1, 1, 1, 1, 1, 1, 5], 5))  # worst case

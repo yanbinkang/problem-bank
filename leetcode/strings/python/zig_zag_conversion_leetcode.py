@@ -1,4 +1,6 @@
 """
+https://leetcode.com/problems/zigzag-conversion/description/
+
 The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
 
 P   A   H   N
@@ -17,6 +19,8 @@ Idea: Iterate over each character in the string and distribute the characters in
 
 Let num_rows equal three empty strings i.e ['', '', '']. Concatenate the first character to the first empty string. When index is zero, we know we have to move to the next index. When index is equal to (num_rows - 1) we have to change direction.
 """
+
+
 def convert(s, num_rows):
     if num_rows == 1 or num_rows >= len(s):
         return s
@@ -36,6 +40,7 @@ def convert(s, num_rows):
 
     return ''.join(result)
 
+
 def convert_2(s, num_rows):
     if num_rows == 1 or num_rows >= len(s):
         return s
@@ -53,6 +58,7 @@ def convert_2(s, num_rows):
         index += step
 
     return ''.join(result)
+
 
 if __name__ == '__main__':
     print convert('PAYPALISHIRING', 3)

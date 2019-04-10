@@ -1,16 +1,18 @@
 from stack import *
+
+
 def par_checker(symbol_string):
     stack = Stack()
-    for i in symbol_string:
-        if i == "(":
-            stack.push(i)
+
+    for paren in symbol_string:
+        if paren == "(":
+            stack.push(paren)
         else:
             if not stack.isEmpty():
                 stack.pop()
-    if stack.isEmpty():
-        return True
-    else:
-        return False
+
+    return stack.isEmpty()
+
 
 print(par_checker('((()))'))
 print(par_checker('(()'))

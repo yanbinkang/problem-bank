@@ -33,43 +33,46 @@ l is the element -1
 r is the element 5
 s = 0
 
-At this point the first l is part of the result we want and we've skipped l to the last -1 (using the first inner while loop: line 60). In the next iteration we still don't want to include -1 in the result (it'll result in a duplicate). So we need to move l again, and also move r as usual. That's why!
+At this point the first l is part of the result we want and we've skipped l to the last -1 (using the first inner while loop: line 62). In the next iteration we still don't want to include -1 in the result (it'll result in a duplicate). So we need to move l again, and also move r as usual. That's why!
 
 The same explanation works for r
 """
+
+
 def threeSum(nums):
     res = []
     nums.sort()
 
     for i in range(len(nums) - 2):
-        if i > 0 and nums[i] == nums[i-1]:
+        if i > 0 and nums[i] == nums[i - 1]:
             continue
 
-        l, r = i+1, len(nums)-1
+        l, r = i + 1, len(nums) - 1
 
         while l < r:
-            s = nums[i] + nums[l] + nums[r]
+            total = nums[i] + nums[l] + nums[r]
 
-            if s < 0:
-                l +=1
-            elif s > 0:
+            if total < 0:
+                l += 1
+            elif total > 0:
                 r -= 1
             else:
                 res.append([nums[i], nums[l], nums[r]])
 
-                while l < r and nums[l] == nums[l+1]:
+                while l < r and nums[l] == nums[l + 1]:
                     l += 1
-                while l < r and nums[r] == nums[r-1]:
+                while l < r and nums[r] == nums[r - 1]:
                     r -= 1
 
-                l += 1; r -= 1
+                l += 1
+                r -= 1
     return res
+
 
 # https://discuss.leetcode.com/topic/8125/concise-o-n-2-java-solution/15
 def three_sum(nums):
     nums.sort()
     result = []
-
     """
     because of left, right = i + 1, len(nums) - 1 you are guaranteed to reach the last 2 indexes always so you can do this instead of iterating to the end of the list:
 
@@ -106,6 +109,7 @@ def three_sum(nums):
 
     return result
 
+
 # TLE
 def three_sum_brute_force(nums):
     res = []
@@ -124,8 +128,8 @@ def three_sum_brute_force(nums):
 
     return res
 
+
 if __name__ == '__main__':
     print three_sum([-1, 0, 1, 2, -1, -4])
     print threeSum([-1, 0, 1, 2, -1, -4])
     print threeSum([0, 0, 0, 0, 0, 0])
-

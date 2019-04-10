@@ -23,8 +23,11 @@ Finally return max_so_far
 
 ref: https://en.wikipedia.org/wiki/Maximum_subarray_problem
 """
+
+
 def max_subarray(nums):
-    max_ending_here = max_so_far = nums[0]
+    max_ending_here = nums[0]
+    max_so_far = nums[0]
 
     for i in range(1, len(nums)):
         max_ending_here = max(nums[i], max_ending_here + nums[i])
@@ -32,5 +35,41 @@ def max_subarray(nums):
 
     return max_so_far
 
+
 if __name__ == '__main__':
-    print max_subarray([-2, 1, -3, 4, -1, 2, 1, -5, 4])
+    print(max_subarray([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
+'''
+num = 1
+max_ending_here = max(1, -2+1) = 1
+max_so_far = max(-2, 1) = 1
+
+num=-3
+max_ending_here = max(-3, 1+-3) = -2
+max_so_far = max(1, -2) = 1
+
+num=4
+max_ending_here = max(4, -2+4) = 4
+max_so_far = max(1, 4) = 4
+
+num = -1
+max_ending_here = max(-1, 4+-1) = 3
+max_so_far = max(3, 4) = 4
+
+num = 2
+max_ending_here = max(2, 3+2) = 5
+max_so_far = max(4, 5) = 5
+
+num = 1
+max_ending_here = max(1, 5 + 1) = 6
+max_so_far = max(5, 6) = 6
+
+num = -5
+max_ending_here = max(-5, 6 + -5) = 1
+max_so_far = max(6, 1) = 6
+
+num = 4
+max_ending_here = max(4, 1 + 5) = 5
+max_so_far = max(6, 5) = 6
+
+return 6
+'''

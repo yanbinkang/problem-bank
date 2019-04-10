@@ -38,9 +38,10 @@ result_set[3][2] = result_set[2][1] + result_set[2][2]
 
 [1, 2, 1] = > [1, 3, 3, 1]
 """
+
+
 def generate(num_rows):
     result_set = [[1] * (i + 1) for i in range(num_rows)]
-
     """
     we start from 1 in each iteration because we dont care about index 0 when generating the pascals-triangle. IT'S ALWAYS 1!
     """
@@ -53,5 +54,6 @@ def generate(num_rows):
 
     return result_set
 
+
 if __name__ == '__main__':
-    print generate(5)
+    print(generate(5))

@@ -29,14 +29,25 @@ list(itertools.combinations(range(1, 5) , 2))
 
 where 1, 2, 3, 4 are p1, p2, p3, p4 respectively!
 """
+
+
 def validSquare(p1, p2, p3, p4):
 
-    s = set( [dist(p1, p2), dist(p1, p3), dist(p1, p4), dist(p2, p3), dist(p2, p4), dist(p3, p4)] )
+    s = set([
+        dist(p1, p2),
+        dist(p1, p3),
+        dist(p1, p4),
+        dist(p2, p3),
+        dist(p2, p4),
+        dist(p3, p4)
+    ])
 
     return not list(s).count(0) and len(s) == 2
 
+
 def dist(p, q):
-    return (p[0] - q[0]) ** 2 + (p[1] - q[1]) ** 2
+    return (p[0] - q[0])**2 + (p[1] - q[1])**2
+
 
 if __name__ == '__main__':
     print validSquare([0, 0], [1, 1], [1, 0], [0, 1])

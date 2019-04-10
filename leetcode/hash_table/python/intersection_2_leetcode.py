@@ -30,6 +30,8 @@ If both nums1 and nums2 are so huge that neither fit into the memory, sort them 
 
 read this: https://discuss.leetcode.com/topic/45992/solution-to-3rd-follow-up-question
 """
+
+
 def intersect(nums1, nums2):
     if not nums1 or not nums2: return []
 
@@ -47,6 +49,7 @@ def intersect(nums1, nums2):
                 result.append(num)
 
     return result
+
 
 # binary search
 def intersect_2(nums1, nums2):
@@ -68,15 +71,14 @@ def intersect_2(nums1, nums2):
 
     return result
 
+
 if __name__ == '__main__':
-    print intersect([1, 2, 2, 1], [2, 2]) # [2, 2]
-    print intersect([1], [1, 1])  # [1]
-    print intersect([1, 2], [1, 1]) # [1]
-    print intersect([], [1]) # []
-    print intersect([1], [1, 2]) # [1]
+    print(intersect([1, 2, 2, 1], [2, 2]))  # [2, 2])
+    print(intersect([1], [1, 1]))  # [1])
+    print(intersect([1, 2], [1, 1]))  # [1])
+    print(intersect([], [1]))  # [])
+    print(intersect([1], [1, 2]))  # [1])
 
-    print ('\n')
-    print intersect_2([1, 2, 2, 1], [2, 2])
-    print intersect_2([1], [1, 1])
-
-
+    print('\n')
+    print(intersect_2([1, 2, 2, 1], [2, 2]))
+    print(intersect_2([1], [1, 1]))

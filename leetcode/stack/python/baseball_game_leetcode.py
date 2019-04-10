@@ -46,6 +46,7 @@ ref: https://discuss.leetcode.com/topic/104693/straightforward-python
 use stack and calculate total at end of game
 """
 
+
 def calPoints(ops):
     """
     :type ops: List[str]
@@ -65,6 +66,7 @@ def calPoints(ops):
 
     return sum(hist)
 
+
 if __name__ == '__main__':
-    print calPoints(["5","2","C","D","+"])
-    print calPoints(["5","-2","4","C","D","9","+","+"])
+    print calPoints(["5", "2", "C", "D", "+"])
+    print calPoints(["5", "-2", "4", "C", "D", "9", "+", "+"])

@@ -1,4 +1,6 @@
 """
+https://leetcode.com/problems/valid-palindrome-ii/description/
+
 Given a non-empty string s, you may delete at most one character. Judge whether you can make it a palindrome.
 
 Example 1:
@@ -19,6 +21,8 @@ O(n) time O(1) space
 """
 algo: Follow normal way (two pointers) to check if s is palindrome. When two chars are not equal, try to skip (pseudo delete) either left one or right one and continue checking.
 """
+
+
 def valid_palindrome_1(s):
     if not s: return True
 
@@ -43,13 +47,14 @@ def is_pal(s):
     l, r = 0, len(s) - 1
 
     while l < r:
-        if s[l]  == s[r]:
-            l += 1
-            r -= 1
-        else:
+        if s[l] != s[r]:
             return False
 
+        l += 1
+        r -= 1
+
     return True
+
 
 # ref: https://discuss.leetcode.com/topic/103941/java-solution-ispalindrome
 def valid_palindrome(s):
@@ -69,17 +74,15 @@ def valid_palindrome(s):
 
 def is_palin(s, i, j):
     while i < j:
-        if s[i] == s[j]:
-            i += 1
-            j -= 1
-        else:
+        if s[i] != s[j]:
             return False
+
+        i += 1
+        j -= 1
 
     return True
 
 
-
-
 if __name__ == '__main__':
-    print valid_palindrome('aba')
-    print valid_palindrome('abca')
+    print(valid_palindrome('aba'))
+    print(valid_palindrome('abca'))
