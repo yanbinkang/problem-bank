@@ -37,6 +37,7 @@ output: {
 def flatten_dictionary(dict)
   result = {}
   flatten_hash_helper('', dict, result)
+
   result
 end
 

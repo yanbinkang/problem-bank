@@ -13,6 +13,8 @@ return 2.
 https://discuss.leetcode.com/topic/55148/java-7-lines-solution-29ms/2
 """
 import string
+
+
 def first_unique_char(s):
     collection = [0] * 26
 
@@ -26,6 +28,7 @@ def first_unique_char(s):
             return s.index(char)
 
     return -1
+
 
 def first_unique_char_1(s):
     collection = [0] * 26
@@ -43,8 +46,8 @@ def first_unique_char_1(s):
 
 
 if __name__ == '__main__':
-    print first_unique_char('leetcode')
-    print first_unique_char('loveleetcode')
+    print(first_unique_char('leetcode'))
+    print(first_unique_char('loveleetcode'))
     print('\n')
-    print first_unique_char_1('leetcode')
-    print first_unique_char_1('loveleetcode')
+    print(first_unique_char_1('leetcode'))
+    print(first_unique_char_1('loveleetcode'))

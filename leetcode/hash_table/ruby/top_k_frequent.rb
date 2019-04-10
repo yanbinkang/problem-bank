@@ -40,15 +40,13 @@ def top_k_frequent(nums, k)
   res = []
 
   bucket.length.times.reverse_each do |i|
-    if bucket[i] && res.length < k
-      res += bucket[i]
-    end
+    res += bucket[i] if bucket[i] && res.length < k
   end
 
   res[0...k]
 end
 
-if __FILE__ == $0
+if $PROGRAM_NAME == __FILE__
   puts top_k_frequent([1, 1, 1, 2, 2, 3], 2)
   puts top_k_frequent([3,0,1,0], 1)
   puts top_k_frequent([1], 1)

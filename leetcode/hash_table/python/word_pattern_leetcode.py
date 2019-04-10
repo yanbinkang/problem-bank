@@ -16,6 +16,7 @@ https://discuss.leetcode.com/topic/26573/very-fast-3ms-java-solution-using-hashm
 https://leetcode.com/problems/isomorphic-strings/
 """
 
+
 def word_pattern(pattern, string):
     words = string.split()
     d = {}
@@ -30,7 +31,7 @@ def word_pattern(pattern, string):
             if d.get(char) != words[i]:
                 return False
         else:
-            # at this point, we know the pattern should not be stored as a key in the dict. So if word is already stored as a value in dict, return false. This means its already been associated with another pattern. See the last example.
+            # at this point, we know the pattern and word (key/value pair) can be stored dict. But if word is already stored as a value in dict, return false. This means its already been associated with another pattern. See the last example.
             if words[i] in d.values():
                 return False
 
@@ -40,7 +41,6 @@ def word_pattern(pattern, string):
 
 
 if __name__ == '__main__':
-    print word_pattern('abba', 'dog cat cat dog')
-    print word_pattern('abba', 'dog cat cat fish')
-    print word_pattern('abba', 'dog dog dog dog')
-
+    print(word_pattern('abba', 'dog cat cat dog'))
+    print(word_pattern('abba', 'dog cat cat fish'))
+    print(word_pattern('abba', 'dog dog dog dog'))

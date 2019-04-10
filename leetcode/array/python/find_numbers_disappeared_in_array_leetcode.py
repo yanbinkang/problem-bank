@@ -19,6 +19,8 @@ ref: https://discuss.leetcode.com/topic/68838/python-4-lines-with-short-explanat
 
 algo: First iteration to negate values at position whose equal to values appear in array. Second iteration to collect all position whose value is positive, which are the missing values. Complexity is O(n) Time and O(1) space.
 """
+
+
 def findDisappearedNumbers(nums):
     """
     :type nums: List[int]
@@ -30,5 +32,6 @@ def findDisappearedNumbers(nums):
 
     return [i + 1 for i in range(len(nums)) if nums[i] > 0]
 
+
 if __name__ == '__main__':
-    print findDisappearedNumbers([4,3,2,7,8,2,3,1])
+    print(findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]))

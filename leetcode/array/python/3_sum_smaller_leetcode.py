@@ -34,6 +34,8 @@ Just like in the example above, we know that since -2 + 0 + 3 < 2, we can replac
 
 RUNTIME: O(N ^ 2)
 """
+
+
 def threeSumSmaller(nums, target):
     nums.sort()
 
@@ -53,7 +55,8 @@ def threeSumSmaller(nums, target):
 
     return count
 
+
 if __name__ == '__main__':
-    print threeSumSmaller([-2, 0, 1, 3], 2)
+    print(threeSumSmaller([-2, 0, 1, 3], 2))
     print('\n')
-    print threeSumSmaller([3, 1, 0, -2], 4)
+    print(threeSumSmaller([3, 1, 0, -2], 4))

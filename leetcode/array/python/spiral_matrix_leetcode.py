@@ -13,9 +13,12 @@ Given the following matrix:
 ]
 You should return [1,2,3,6,9,8,7,4,5].
 
+solution ref: https://discuss.leetcode.com/topic/3713/super-simple-and-easy-to-understand-solution
+
 solve next: https://leetcode.com/problems/spiral-matrix-ii/description/
 """
-# https://discuss.leetcode.com/topic/3713/super-simple-and-easy-to-understand-solution
+
+
 def spiral_order(matrix):
     result = []
 
@@ -25,7 +28,6 @@ def spiral_order(matrix):
     row_begin, col_begin = 0, 0
     row_end = len(matrix) - 1
     col_end = len(matrix[0]) - 1
-
 
     while row_begin <= row_end and col_begin <= col_end:
         # traverse right
@@ -43,7 +45,6 @@ def spiral_order(matrix):
         if row_begin > row_end or col_begin > col_end:
             break
 
-
         # traverse left
         for j in reversed(range(col_begin, col_end + 1)):
             result.append(matrix[row_end][j])
@@ -55,8 +56,6 @@ def spiral_order(matrix):
             result.append(matrix[j][col_begin])
 
         col_begin += 1
-
-
 
     return result
 
@@ -83,11 +82,7 @@ def spiral_order_1(matrix):
 
 
 if __name__ == '__main__':
-    matrix = [
-              [ 1, 2, 3 ],
-              [ 4, 5, 6 ],
-              [ 7, 8, 9 ]
-             ]
+    matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
     print spiral_order(matrix)
     print('\n')

@@ -61,7 +61,7 @@ def helper(nums, result, temp_list)
   end
 end
 
-if __FILE__ == $0
+if $PROGRAM_NAME == __FILE__
   p permute([1, 2, 3])
   puts
   p permute_backtracking([1, 2, 3])

@@ -11,7 +11,10 @@ m = 8
 Return 2
 
 The two triplets with sum greater than 8 are (3, 2, 5) and (3, 1, 5)
+
+Note: Look at 3 sum smaller for explanation
 """
+
 
 def threeSumLarger(nums, target):
     nums.sort()
@@ -32,7 +35,7 @@ def threeSumLarger(nums, target):
 
     return count
 
+
 if __name__ == '__main__':
     print threeSumLarger([3, 1, 2, 5], 8)
     print threeSumLarger([5, 1, 3, 4, 7], 12)
-

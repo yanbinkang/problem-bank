@@ -14,7 +14,7 @@ class Stack:
 
     def peek(self):
         if not self.items: return None
-        return self.items[len(self.items) - 1]
+        return self.items[-1]
 
     def size(self):
         return len(self.items)

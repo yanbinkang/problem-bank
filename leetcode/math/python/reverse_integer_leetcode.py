@@ -6,6 +6,8 @@ Reverse digits of an integer.
 Example1: x = 123, return 321
 Example2: x = -123, return -321
 """
+
+
 def reverse(x):
     """
     :type x: int
@@ -30,7 +32,8 @@ def reverse(x):
 
     result = int(sign + x[1:]) if sign else int(x)
 
-    return 0 if abs(result) > 2 ** 31 else result
+    return 0 if abs(result) > 2**31 else result
+
 
 def reverse_char(a_list, first, last):
     while first < last:
@@ -41,7 +44,8 @@ def reverse_char(a_list, first, last):
         first += 1
         last -= 1
 
+
 if __name__ == '__main__':
-    print reverse(123)
-    print reverse(-123)
-    print reverse(901000)
+    print(reverse(123))
+    print(reverse(-123))
+    print(reverse(901000))

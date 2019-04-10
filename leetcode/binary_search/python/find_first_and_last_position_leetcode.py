@@ -1,5 +1,5 @@
 """
-https://leetcode.com/problems/search-for-a-range/description/
+https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/
 
 Given an array of integers sorted in ascending order, find the starting and ending position of a given target value.
 
@@ -28,12 +28,47 @@ Answer:
 I think it's for the case in which there is only one element.
 For example, in the test case: search_range([1], 1)
 
-If you use high = A.length - 1; high will be 0 (1-1)
+If you use high = A.length - 1; high will be 0 == (1 - 1)
 This makes while (low < high) false.
-So every time you call firstGreaterEqual(), it will return 0 directly.
+So every time you call first_greater_equal(), it will return 0 directly.
+
+See: "Search insert position" question for further explanation.
+
 Thus, return new int[]{start, Solution.firstGreaterEqual(A, target + 1) - 1};
 will return {0, -1}, which is incorrect.
 """
+
+
+class Solution(object):
+    def searchRange(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+
+        first = self.first_target_index(nums, target)
+
+        # nums is empty or index isn't where target is located in nums
+        if first == len(nums) or nums[first] != target:
+            return [-1, -1]
+
+        return [first, self.first_target_index(nums, target + 1) - 1]
+
+    def first_target_index(self, nums, target):
+        lo, hi = 0, len(nums) - 1
+
+        while lo <= hi:
+            mid = (lo + hi) / 2
+
+            if nums[mid] < target:
+                lo = mid + 1
+            else:
+                hi = mid - 1
+
+        return lo
+
+
 def search_range(nums, target):
     start = first_greater_equal(nums, target)
 
@@ -41,6 +76,7 @@ def search_range(nums, target):
         return [-1, -1]
 
     return [start, first_greater_equal(nums, target + 1) - 1]
+
 
 def first_greater_equal(nums, target):
     low, high = 0, len(nums)
@@ -56,38 +92,7 @@ def first_greater_equal(nums, target):
     return low
 
 
-class Solution(object):
-    def searchRange(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-
-        first = self.first_target_index(nums, target)
-
-        if first == len(nums) or nums[first] != target:
-            return [-1, -1]
-
-        return [first, self.first_target_index(nums, target + 1) - 1]
-
-
-
-    def first_target_index(self, nums, target):
-        lo, hi = 0, len(nums) - 1
-
-        while lo <= hi:
-            mid = (lo + hi) / 2
-
-            if nums[mid] < target:
-                lo = mid + 1
-            else:
-                hi = mid - 1
-
-        return lo
-
 if __name__ == '__main__':
-    print search_range([5, 7, 7, 8, 8, 10], 8)
-    print search_range([1, 2, 5, 5, 5, 5, 5, 5, 5, 5, 20], 5)
-    print search_range([], 0)
-
+    print(search_range([5, 7, 7, 8, 8, 10], 8))
+    print(search_range([1, 2, 5, 5, 5, 5, 5, 5, 5, 5, 20], 5))
+    print(search_range([], 0))

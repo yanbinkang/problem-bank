@@ -22,6 +22,8 @@ ref: https://discuss.leetcode.com/topic/28240/9-lines-of-python-code/6
 
         return '/' + '/'.join(stack)
 """
+
+
 def simplify_path(path):
     stack = []
 
@@ -33,6 +35,7 @@ def simplify_path(path):
             stack.append(p)
 
     return '/' + '/'.join(stack)
+
 
 if __name__ == '__main__':
     print simplify_path('/a/./b/../../c/')

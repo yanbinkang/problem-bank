@@ -7,6 +7,8 @@ Given two arrays, write a function to compute their intersection.
 
 Note: Intersection means elements common to the two arrays
 """
+
+
 # O(n) time and space
 def intersection(nums1, nums2):
     intersect, seen = set(), set()
@@ -19,6 +21,7 @@ def intersection(nums1, nums2):
             intersect.add(num)
 
     return list(intersect)
+
 
 # sort both arrays and use two pointers. O(nLogn) time, O(n) space
 def intersection_alt(nums1, nums2):
@@ -43,11 +46,10 @@ def intersection_alt(nums1, nums2):
 
 
 if __name__ == '__main__':
-    print intersection([1, 2, 2, 1], [2, 2])
-    print intersection([1, 1, 3, 5], [1, 2, 3])
-    print intersection([ 'a', 'b', 'b', 'z' ], [ 'a', 'b', 'c' ])
+    print(intersection([1, 2, 2, 1], [2, 2]))
+    print(intersection([1, 1, 3, 5], [1, 2, 3]))
+    print(intersection(['a', 'b', 'b', 'z'], ['a', 'b', 'c']))
     print('\n')
-    print intersection_alt([1, 2, 2, 1], [2, 2])
-    print intersection_alt([1, 1, 3, 5], [1, 2, 3])
-    print intersection_alt([ 'a', 'b', 'b', 'z' ], [ 'a', 'b', 'c' ])
-
+    print(intersection_alt([1, 2, 2, 1], [2, 2]))
+    print(intersection_alt([1, 1, 3, 5], [1, 2, 3]))
+    print(intersection_alt(['a', 'b', 'b', 'z'], ['a', 'b', 'c']))

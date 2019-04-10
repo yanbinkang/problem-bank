@@ -5,7 +5,6 @@ Given a digit string, return all possible letter combinations that the number co
 
 A mapping of digit to letters (just like on the telephone buttons) is given below.
 
-
 Input:Digit string "23"
 Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
 Note:
@@ -16,28 +15,30 @@ https://discuss.leetcode.com/topic/3396/my-iterative-sollution-very-simple-under
 Time complexity: Assuming the average number of letters on every number is m and the length of digits string is n, then the time complexity is O(m^n) [exponential]
 =end
 def letter_combinations(digits)
-  result = ['']
+  results = []
 
-  return result if digits.nil?
+  return results if digits.empty? || digits.nil?
 
-  char_map = ['0', '1', 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz']
+  results << ''
+
+  char_map = %w[0 1 abc def ghi jkl mno pqrs tuv wxyz]
 
   digits.chars.each do |digit|
     letters = char_map[digit.to_i]
     temp = []
 
-    result.each do |str|
-      letters.chars.each do |char|
-        temp << str + char
+    results.each do |result|
+      letters.chars.each do |letter|
+        temp << result + letter
       end
     end
 
-    result = temp
+    results = temp
   end
 
-  return result
+  results
 end
 
-if __FILE__ == $0
+if $PROGRAM_NAME == __FILE__
   p letter_combinations('23')
 end

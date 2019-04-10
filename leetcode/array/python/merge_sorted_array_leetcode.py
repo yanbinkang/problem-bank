@@ -16,8 +16,12 @@ In the end, one array's elements will be moved completely to the end of the firs
 
 If nums1 has the bigger elements, the pointer j for nums2 wouldnt have changed at all hence the second while loop will just copy the elements in nums2 to its appropraite location in nums1
 """
+
+
 def merge(nums1, m, nums2, n):
-    i, j, k = m - 1, n - 1, m + n - 1
+    i = m - 1
+    j = n - 1
+    k = m + n - 1
 
     while i >= 0 and j >= 0:
         if nums1[i] > nums2[j]:
@@ -32,6 +36,7 @@ def merge(nums1, m, nums2, n):
         nums1[k] = nums2[j]
         k -= 1
         j -= 1
+
 
 if __name__ == '__main__':
     nums1 = [5, 6, 7, 8, None, None, None, None]

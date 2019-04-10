@@ -17,6 +17,8 @@ The basic idea is to iteratively update the array from the end to the beginning.
 
 it's O(k) space complexity, not time complexity. The space used is just the k+1 array elements, hence O(k)
 """
+
+
 def get_row(row_index):
     result = [1] * (row_index + 1)
 
@@ -31,5 +33,6 @@ def get_row(row_index):
 
     return result
 
+
 if __name__ == '__main__':
-    print get_row(3)
+    print(get_row(3))

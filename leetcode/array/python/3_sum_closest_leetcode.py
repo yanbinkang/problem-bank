@@ -7,6 +7,8 @@ Given an array S of n integers, find three integers in S such that the sum is cl
 
     The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
 """
+
+
 def threeSumClosest(nums, target):
     nums.sort()
 
@@ -33,6 +35,6 @@ def threeSumClosest(nums, target):
 
     return closest_so_far
 
+
 if __name__ == '__main__':
     print threeSumClosest([-1, 2, 1, -4], 1)
-

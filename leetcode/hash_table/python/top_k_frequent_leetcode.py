@@ -23,6 +23,8 @@ Algorithm:
 
 7) Return results array.
 """
+
+
 def top_k_frequent(nums, k):
     bucket = [None for i in range(len(nums) + 1)]
     frequency_map = {}
@@ -52,12 +54,11 @@ def top_k_frequent(nums, k):
     return res[:k]
 
 
-
 if __name__ == '__main__':
-    print top_k_frequent([1,1,1,2,2,3], 2)
+    print(top_k_frequent([1, 1, 1, 2, 2, 3], 2))
     print('\n')
-    print top_k_frequent([3,0,1,0], 1)
+    print(top_k_frequent([3, 0, 1, 0], 1))
     print('\n')
-    print top_k_frequent([1], 1)
+    print(top_k_frequent([1], 1))
     # print('\n')
     # print top_k_frequent([1,1,1,1,1,1,2,2,2,3,3,3,4,4,4,5], 2)

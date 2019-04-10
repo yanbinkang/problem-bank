@@ -57,13 +57,13 @@ end
 if $PROGRAM_NAME == __FILE__
   puts is_valid('()') # true
   puts
-  # puts is_valid(']') # false
-  # puts
-  # puts is_valid('()[]{}') # true
-  # puts
-  # puts is_valid('([)]') # false
-  # puts
-  # puts is_valid('{{([][])}()}') # true
+  puts is_valid(']') # false
+  puts
+  puts is_valid('()[]{}') # true
+  puts
+  puts is_valid('([)]') # false
+  puts
+  puts is_valid('{{([][])}()}') # true
   # puts
   # puts is_valid_2('{{([][])}()}') # true
   # puts
