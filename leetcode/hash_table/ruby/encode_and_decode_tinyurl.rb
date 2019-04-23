@@ -31,7 +31,7 @@ class Codec
   end
 
   def decode(short_url)
-    code = short_url.split('').last(6).join
+    code = short_url.chars.last(6).join
     @code_2_url[code]
   end
 end
