@@ -50,12 +50,13 @@ put: if key in cache remove from deque. If the length of the dictionary is equal
 Finally add the key to the back of the deque and add the key/value pair to the dictionary.
 """
 import collections
+
+
 class LRUCache(object):
 
     def __init__(self, capacity):
         self.dic = collections.OrderedDict()
         self.capacity = capacity
-
 
     def get(self, key):
         if key not in self.dic:
@@ -65,21 +66,22 @@ class LRUCache(object):
         self.dic[key] = v       # set the key as the newest one at the back
         return v                # return v
 
-
     def put(self, key, value):
         if key in self.dic:
             self.dic.pop(key)
         else:
             if self.capacity > 0:
                 self.capacity -= 1
-            else: # self.dic is full
-                self.dic.popitem(last=False) # FIFO or remove from front
-        self.dic[key] = value # set the key as the newest one at the back
+            else:  # self.dic is full
+                self.dic.popitem(last=False)  # FIFO or remove from front
+        self.dic[key] = value  # set the key as the newest one at the back
 
 
 """
 LRUCache solution using dictionary and deque
 """
+
+
 class LRUCache(object):
     def __init__(self, capacity):
         self.deque = collections.deque([])
@@ -113,7 +115,7 @@ if __name__ == '__main__':
     # cache.put(2, 2)
     # print cache.dic
     # print cache.dic
-    # print cache.get(1)        # reutns 1
+    # print cache.get(1)        # returns 1
     # # print cache.dic
     # cache.put(3, 3)           # evicts key 2
     # # print cache.dic
