@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 =begin
 https://leetcode.com/problems/number-complement/description/
 
@@ -5,7 +7,7 @@ Given a positive integer, output its complement number. The complement strategy 
 
 Note:
 The given integer is guaranteed to fit within the range of a 32-bit signed integer.
-You could assume no leading zero bit in the integer’s binary representation.
+You could assume no leading zero bit in the integer's binary representation.
 
 Example 1:
 Input: 5
@@ -24,8 +26,8 @@ def find_complement(num)
   num_bits = num.to_s(2).chars.map(&:to_i) # Convert to binary (base 2) and map to integers
 
   num_bits.reverse.each_with_index do |n, idx|
-    n = n == 0 ? 1 : 0
-    result += 2 ** idx * (n) # Convert to base 10
+    n = n.zero? ? 1 : 0
+    result += 2**idx * n # Convert to base 10
   end
 
   result
