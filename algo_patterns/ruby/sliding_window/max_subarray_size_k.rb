@@ -19,7 +19,7 @@ def max_subarray_size_k(size, arr)
   max_sum = 0
   window_sum = 0
 
-  (arr.length - size + 1).times do |i|
+  (arr.length - size + 1).each do |i|
     window_sum = 0
     (i...i + size).each do |j|
       window_sum += arr[j]
